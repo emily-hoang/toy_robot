@@ -1,4 +1,4 @@
-require './table.rb'
+require_ralitive: '../src/table.rb'
 
 RSpec.describe 'Table' do
   let(:table) { Table.new(5,5) }

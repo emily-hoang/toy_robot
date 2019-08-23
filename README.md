@@ -1,14 +1,16 @@
+Class Table:
+- attributes: +  length, width
+
 Class Robot:
-- attributes: + facing
-              + location
-- methods:    + PLACE
+- methods:    + PLACE(x, y, facing)
               + MOVE
               + LEFT
               + RIGHT
               + REPORT
+Class Game:  
+- create robot, table
 
-Class Table:
-- attributes: + dimensions
+
  
 
 
