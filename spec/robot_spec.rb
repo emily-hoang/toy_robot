@@ -24,21 +24,52 @@ RSpec.describe "Robot" do
     context 'when a placement is invalid' do
       context 'when it is off the board' do
         let(:x) { 6 }
+
         it "will return false" do
           expect(place).to eq(false)
         end
 
         let(:x) { -1 }
+
         it "will return false" do
           expect(place).to eq(false)
         end
       end
+    end
+  end
 
-      context 'when the argument is invalid' do
-        let(:facing) { "north" }
-        it "will return false" do
-          expect(place).to eq(false)
-        end
+  describe "#left" do
+    before { robot.place(0,0,facing)  }
+
+    context "when the robot is facing north" do
+      let(:facing) { 'NORTH' }
+
+      it "will turn to face the west" do
+        expect(robot.left).to eq("WEST")
+      end
+    end
+
+    context "when the robot is facing north" do
+      let(:facing) { 'SOUTH' }
+
+      it "will turn to face the west" do
+        expect(robot.left).to eq("EAST")
+      end
+    end
+
+    context "when the robot is facing north" do
+      let(:facing) { 'WEST' }
+
+      it "will turn to face the west" do
+        expect(robot.left).to eq("SOUTH")
+      end
+    end
+
+    context "when the robot is facing north" do
+      let(:facing) { 'EAST' }
+
+      it "will turn to face the west" do
+        expect(robot.left).to eq("NORTH")
       end
     end
   end
