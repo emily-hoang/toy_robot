@@ -48,5 +48,9 @@ class Robot
         @location[:facing] = "SOUTH"
     end
   end
+
+  def move
+
+  end
 end
 

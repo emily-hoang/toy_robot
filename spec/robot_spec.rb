@@ -49,27 +49,63 @@ RSpec.describe "Robot" do
       end
     end
 
-    context "when the robot is facing north" do
+    context "when the robot is facing south" do
       let(:facing) { 'SOUTH' }
 
-      it "will turn to face the west" do
+      it "will turn to face the east" do
         expect(robot.left).to eq("EAST")
       end
     end
 
-    context "when the robot is facing north" do
+    context "when the robot is facing west" do
       let(:facing) { 'WEST' }
 
-      it "will turn to face the west" do
+      it "will turn to face the south" do
         expect(robot.left).to eq("SOUTH")
       end
     end
 
-    context "when the robot is facing north" do
+    context "when the robot is facing east" do
       let(:facing) { 'EAST' }
 
-      it "will turn to face the west" do
+      it "will turn to face the north" do
         expect(robot.left).to eq("NORTH")
+      end
+    end
+  end
+
+  describe "#right" do
+    before { robot.place(0, 0, facing) }
+
+    context "when the robot is facing north" do
+      let(:facing) { "NORTH" }
+
+      it "will turn to face the east" do
+        expect(robot.right).to eq("EAST")
+      end
+    end
+
+    context "when the robot is facing south" do
+      let (:facing) { "SOUTH" }
+
+      it "will turn to face west" do
+        expect(robot.right).to eq("WEST")
+      end
+    end
+
+    context "when the robot is facing west" do
+      let(:facing) { "WEST" }
+
+      it "will turn to face the north" do
+        expect(robot.right).to eq("NORTH")
+      end
+    end
+
+    context "when the robot is facing east" do
+      let(:facing) { "EAST" }
+
+      it "will turn to face the south" do
+        expect(robot.right).to eq("SOUTH")
       end
     end
   end
