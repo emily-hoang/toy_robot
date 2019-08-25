@@ -109,4 +109,40 @@ RSpec.describe "Robot" do
       end
     end
   end
+
+  describe "#move" do
+    before { robot.place(2, 2, facing)}
+
+    context "when the robot is facing north" do
+      let(:facing) { "NORTH" }
+
+      it "will move the robot 1 unit forward north" do
+        expect(robot.move).to eq(3)
+      end
+    end
+
+    context "when the robot is facing south" do
+      let(:facing) { "SOUTH" }
+
+      it "will move the robot 1 unit forward south" do
+        expect(robot.move).to eq(3)
+      end
+    end
+
+    context "when the robot is facing west" do
+      let(:facing) { "WEST" }
+
+      it "will move the robot 1 unit forward west" do
+        expect(robot.move).to eq(3)
+      end
+    end
+
+    context "when the robot is facing east" do
+      let(:facing) { "EAST" }
+
+      it "will move the robot 1 unit forward east" do
+        expect(robot.move).to eq(3)
+      end
+    end
+  end
 end

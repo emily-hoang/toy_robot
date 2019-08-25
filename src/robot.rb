@@ -50,7 +50,17 @@ class Robot
   end
 
   def move
-
+    return unless @placed
+    case @location[:facing]
+      when "NORTH"
+        @location[:x] = @location[:x] + 1 if @location[:x] + 1 <= 5
+      when "SOUTH"
+        @location[:x] = @location[:x] + 1 if @location[:x] + 1 <= 5
+      when "WEST"
+        @location[:y] = @location[:y] + 1 if @location[:y] + 1 <= 5 
+      when "EAST"
+        @location[:y] = @location[:y] + 1 if @location[:y] + 1 <= 5
+    end
   end
 end
 
