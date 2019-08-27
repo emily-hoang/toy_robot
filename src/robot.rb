@@ -60,7 +60,15 @@ class Robot
         @location[:y] = @location[:y] + 1 if @location[:y] + 1 <= 5 
       when "EAST"
         @location[:y] = @location[:y] + 1 if @location[:y] + 1 <= 5
+      else
+        return false
     end
+  end
+
+  def report
+    return unless @placed
+
+    return @location
   end
 end
 

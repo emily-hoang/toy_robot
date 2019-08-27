@@ -145,4 +145,18 @@ RSpec.describe "Robot" do
       end
     end
   end
+
+  describe "#report" do
+    before { robot.place(0, 0, "NORTH") }
+
+    context "when the robot is reported" do
+      it "will return the location of the robot" do
+        expect(robot.report).to eq({
+          x: 0,
+          y: 0,
+          facing: "NORTH"
+        })
+      end
+    end
+  end
 end

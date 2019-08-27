@@ -3,10 +3,10 @@ require './robot'
 require './table'
 
 if ARGV.length > 0
-  instruction_file = ARGV[0]
+  instructions = ARGV[0]
 
-  if File.exist?(instruction_file)
-    Game.new(instruction_file)
+  if File.exist?(instructions)
+    Game.new(instructions)
   else
     puts "The instruction file doesn't exist"
   end
